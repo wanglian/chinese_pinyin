@@ -1,12 +1,19 @@
-$LOAD_PATH.unshift File.expand_path("../lib", __FILE__)
+$:.unshift("/Library/RubyMotion/lib")
+require 'motion/project/template/ios'
 require "bundler"
-Bundler.setup
+Bundler.require
 
 require "rake"
 require 'rake/testtask'
 require "rdoc/task"
 
-require "chinese_pinyin/version"
+require "chinese_pinyin"
+
+Motion::Project::App.setup do |app|
+  app.name = 'chinese_pinyin'
+  app.version = 'ChinesePinyin::VERSION'
+  app.detect_dependencies = false
+end
 
 task :build do
   system "gem build chinese_pinyin.gemspec"

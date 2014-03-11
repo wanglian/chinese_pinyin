@@ -1,7 +1,4 @@
-lib = File.expand_path('../lib/', __FILE__)
-$:.unshift lib unless $:.include?(lib)
-
-require "chinese_pinyin/version"
+require File.expand_path('../lib/chinese_pinyin/version', __FILE__)
 
 Gem::Specification.new do |s|
   s.name        = "chinese_pinyin"
@@ -15,7 +12,9 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = ">= 1.3.6"
 
-  s.files         = `git ls-files`.split("\n")
+  s.files         = `git ls-files`.split($\)
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.require_paths = ["lib"]
+  
+  s.add_dependency "motion-require", ">= 0.0.6"
 end

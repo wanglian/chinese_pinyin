@@ -8,7 +8,13 @@ The dict is borrowed from <http://github.com/fayland/perl-lingua-han/tree/master
 Install
 -------
 
-    sudo gem install chinese_pinyin
+Add this line to your application's Gemfile:
+
+    gem 'chinese_pinyin', github: 'wanglian/chinese_pinyin'
+
+And then execute:
+
+    $ bundle
 
 Usage
 -----
